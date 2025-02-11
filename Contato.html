@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de contato com informações pessoais.">
+    <meta name="author" content="PedroGaspar">
+    <meta name="keywords" content="contato, informações pessoais, e-mail, telefone, redes sociais">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Informações de Contato">
+    <meta property="og:description" content="Página de contato com informações pessoais.">
+    <meta property="og:image" content="URL_DA_IMAGEM">
+    <meta property="og:url" content="URL_DO_SITE">
+    <link rel="icon" href="img/GZL.JPG" type="image/x-icon">
+    <title>Informações de Contato</title>
+    <link rel="stylesheet" href="Contato.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/GZL.JPG" alt="Logo da empresa GZL" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="Contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <h1 class="titulo">Informações de Contato</h1>
+    </header>
+
+    <div class="banner">
+        <p>🚨 Entre em contato comigo através dos canais abaixo!</p>
+    </div>
+
+    <main class="content">
+        <section class="intro">
+            <h2>Entre em Contato</h2>
+            <p>Você pode me contatar através dos seguintes meios:</p>
+        </section>
+        <div class="contact-info">
+            <ul>
+                <li><strong>E-mail:</strong> <a href="mailto:seuemail@example.com">seuemail@example.com</a></li>
+                <li><strong>Telefone:</strong> <a href="tel:+5511999999999">+55 (11) 99999-9999</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank">Meu LinkedIn</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/seu-github" target="_blank">Meu GitHub</a></li>
+            </ul>
+        </div>
+
+        <section class="contact-form">
+            <h2>Envie uma Mensagem</h2>
+            <form action="https://formsubmit.co/b017c569b56fe309fbc390fc88cb6f73" method="POST"></form>
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="Novo Ticket #1234">
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <p>2025 © <a href="https://pedroKA2071.github.io" target="_blank" rel="noopener noreferrer">Pedro Gaspar</a></p>
+            <a href="/politica-de-privacidade">Política de Privacidade</a>
+            <a href="/termos-de-uso">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <button id="btnTopo" title="Voltar ao topo">⬆</button>
+    <script>
+        document.querySelector("form").addEventListener("submit", function() {
+            let nome = document.querySelector("input[name='name']").value;
+            let numeroTicket = Math.floor(Math.random() * 9000) + 1000; // Gera um número aleatório de 1000 a 9999
+            document.querySelector("input[name='_subject']").value = nome + " - Ticket #" + numeroTicket;
+        });
+    </script>
+</body>
+</html>
