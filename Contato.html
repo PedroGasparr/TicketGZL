@@ -14,6 +14,31 @@
     <link rel="icon" href="img/GZL.JPG" type="image/x-icon">
     <title>Informações de Contato</title>
     <link rel="stylesheet" href="Contato.css">
+    <style>
+        /* Estilo para o ícone de loading */
+        .loading {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 4px solid #f3f3f3; 
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        /* Animação de rotação */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Desabilitar o botão enquanto o formulário está sendo enviado */
+        .disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -29,8 +54,6 @@
         </nav>
         <h1 class="titulo">Informações de Contato</h1>
     </header>
-
-
 
     <main class="content">
         <section class="intro">
@@ -54,14 +77,15 @@
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 <input type="hidden" name="_subject" value="Novo Ticket #1234">
-                <button type="submit">Enviar</button>
+                <button type="submit" id="submitBtn">Enviar</button>
+                <div id="loading" class="loading"></div> <!-- Animação de Loading -->
             </form>
         </section>
     </main>
 
     <footer>
         <div class="footer-links">
-            <p>2025 © <a href="https://pedroKA2071.github.io" target="_blank" rel="noopener noreferrer">Pedro Gaspar</a></p>
+            <p>2025 © <a href="https://github.com/PedroGasparr" target="_blank" rel="noopener noreferrer">Pedro Gaspar</a></p>
             <a href="/politica-de-privacidade">Política de Privacidade</a>
             <a href="/termos-de-uso">Termos de Uso</a>
         </div>
@@ -69,10 +93,21 @@
 
     <button id="btnTopo" title="Voltar ao topo">⬆</button>
     <script>
-        document.querySelector("form").addEventListener("submit", function() {
-            let nome = document.querySelector("input[name='name']").value;
-            let numeroTicket = Math.floor(Math.random() * 9000) + 1000; // Gera um número aleatório de 1000 a 9999
-            document.querySelector("input[name='_subject']").value = nome + " - Ticket #" + numeroTicket;
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Previne o envio do formulário para fazer a animação
+
+            let submitButton = document.getElementById("submitBtn");
+            let loadingIcon = document.getElementById("loading");
+
+            // Mostra o ícone de loading e desabilita o botão de envio
+            submitButton.classList.add("disabled");
+            loadingIcon.style.display = "inline-block";
+
+            // Simula o envio do formulário com um delay de 2 segundos (você pode remover isso quando o envio real ocorrer)
+            setTimeout(() => {
+                // Envia o formulário
+                event.target.submit();
+            }, 2000); // Tempo de simulação do envio
         });
     </script>
 </body>
