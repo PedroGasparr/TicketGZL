@@ -3,32 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulário para abertura de chamado de suporte técnico da GZL.">
+    <meta name="author" content="PedroGaspar">
+    <meta name="keywords" content="suporte técnico, chamado, TI, GZL, abertura de ticket">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Abertura de Chamado - TI">
+    <meta property="og:description" content="Formulário para abertura de chamado de suporte técnico da GZL.">
+    <meta property="og:image" content="URL_DA_IMAGEM">
+    <meta property="og:url" content="URL_DO_SITE">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Abertura de Chamado - TI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="GZL.JPG" alt="Logo" />
+            <img src="GZL.JPG" alt="Logo da empresa GZL" />
         </div>
-        <div class="nome" id="nome">
-            TICKET - GZL
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <h1 class="titulo">TICKET - GZL</h1>
     </header>
 
-    <div class="content">
-        <p>Por gentileza, complete as informações necessárias para que possamos atender à sua solicitação de forma adequada..</p>
-
-        <!-- Google Forms responsivo -->
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKa2usPU9vB1T77q4IZB_SO3tMwIKaFt7IFzpZ9X_XgGj4dQ/viewform?embedded=true">Carregando…</iframe>
-        </div>
+    <div class="banner">
+        <p>🚨 Suporte disponível de segunda a sexta, das 08h às 17h! Entre em contato em caso de urgência.</p>
     </div>
 
+    <main class="content">
+        <section class="intro">
+            <h2>Precisa de ajuda?</h2>
+            <p>Complete o formulário abaixo e nossa equipe entrará em contato o mais rápido possível.</p>
+        </section>
+        <div class="form-container">
+            <div class="loader" id="loader">Carregando formulário...</div>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKa2usPU9vB1T77q4IZB_SO3tMwIKaFt7IFzpZ9X_XgGj4dQ/viewform?embedded=true" loading="lazy" aria-label="Formulário de abertura de chamado" onload="document.getElementById('loader').style.display = 'none';">Carregando…</iframe>
+        </div>
+    </main>
+
     <footer>
-        <p>2025 © PedroGaspar</p>
+        <div class="footer-links">
+            <p>2025 © <a href="https://seusite.com" target="_blank" rel="noopener noreferrer">PedroGaspar</a></p>
+            <a href="/politica-de-privacidade">Política de Privacidade</a>
+            <a href="/termos-de-uso">Termos de Uso</a>
+        </div>
     </footer>
 
+    <button id="btnTopo" title="Voltar ao topo">⬆</button>
     <script src="scripts.js"></script>
 </body>
 </html>
