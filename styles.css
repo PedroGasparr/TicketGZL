@@ -13,6 +13,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Navbar */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Centraliza os itens da navbar */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-left: 100px;
+}
+
+nav a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: var(--cor-secundaria);
+}
+
 
 body {
     font-family: var(--fonte-padrao);
